@@ -1,5 +1,5 @@
 # simpleMastodonBot
-A very, very simple Mastodon bot.  Uses the Mastodon.py wrapper for the Mastodon API.  
+A very, very simple Mastodon bot wrapper.  Uses the Mastodon.py wrapper for the Mastodon API.  
 
 ## Prerequisites (on linux): 
   * sudo apt install python-pip
