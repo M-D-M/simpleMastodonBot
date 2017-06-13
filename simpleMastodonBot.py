@@ -66,7 +66,9 @@ def setupBot():
 		,to_file = _userCredFile
 	)
 
-	os.chmod(botName + "*", 0o600)
+	os.chmod(_cfgFile, 0o600)
+	os.chmod(_clientCredFile, 0o600)
+	os.chmod(_userCredFile, 0o600)
 
 	print('Bot setup with Mastodon URL "' +  instanceURL + '" and email address "' + accountEmail + '".  Congrats!')
 
