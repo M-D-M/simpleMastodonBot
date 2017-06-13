@@ -4,6 +4,10 @@ from mastodon import Mastodon
 import argparse
 import os
 
+_cfgFilePermissions=0o600
+
+_completionString="Bot setup with Mastodon URL %s and email address %s.  Congrats!"
+
 _cfgFile=""
 _clientCredFile=""
 _userCredFile=""
@@ -66,11 +70,11 @@ def setupBot():
 		,to_file = _userCredFile
 	)
 
-	os.chmod(_cfgFile, 0o600)
-	os.chmod(_clientCredFile, 0o600)
-	os.chmod(_userCredFile, 0o600)
+	os.chmod(_cfgFile, _cfgFilePermissions)
+	os.chmod(_clientCredFile, _cfgFilePermissions)
+	os.chmod(_userCredFile, _cfgFilePermissions)
 
-	print('Bot setup with Mastodon URL "' +  instanceURL + '" and email address "' + accountEmail + '".  Congrats!')
+	print(_completionString % (instanceURL, accountEmail))
 
 def toot(tootText):
 	apiURLFile = open(_cfgFile, "r")
